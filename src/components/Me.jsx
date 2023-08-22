@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Me = () => {
+const Me = ({handleDecrement, handleIncrement, quantity}) => {
+
     return (
         <div>
             <h2>Me</h2>
-            <p>Hitpoints: </p>
-            <button onClick={() => console.log("You Attacked")}>Attack</button>
+            <p>Hitpoints: {quantity} </p>
+            <button onClick={handleIncrement}>Attack</button>
         </div>
     );
 }

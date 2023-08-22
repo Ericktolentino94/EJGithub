@@ -8,15 +8,27 @@ import You from './components/You'
 import Me from './components/Me'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [quantity, setQuantity] = useState(30)
+      const handleIncrement = () => {
+        console.log(quantity)
+        if (quantity <= 30) {
+          setQuantity(quantity)
+        }
+      }
+      const handleDecrement = () => {
+        if (quantity >= 0) {
+          setQuantity(quantity)
+        }
+      }
+
 
   return (
     <>
-      <div>
+      <div className="colorBattle">
     <Header />
     <Total />
-    <Me />
-    <You />
+    <Me quantity={quantity} handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>
+    <You quantity={quantity} handleIncrement={handleIncrement} handleDecrement={handleDecrement}/>
       </ div>
     </>
   )
